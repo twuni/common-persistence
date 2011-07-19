@@ -1,6 +1,6 @@
 package org.twuni.common.orm;
 
-public interface Behavior {
+public interface Transaction {
 
 	public void perform( Session session );
 
