@@ -10,17 +10,17 @@
 	</parent>
 
 	<groupId>org.twuni</groupId>
-	<artifactId>common-orm</artifactId>
+	<artifactId>common-persistence</artifactId>
 	<version>0.1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Object-Relational Mapping API</name>
-	<description>This API provides a foundation for object-relational mapping.</description>
+	<name>Persistence API</name>
+	<description>This API provides a foundation for object persistence.</description>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:twuni/common-orm.git</developerConnection>
-		<connection>scm:git:git@github.com:twuni/common-orm.git</connection>
-		<url>scm:git:https://twuni@github.com/twuni/common-orm.git</url>
+		<developerConnection>scm:git:git@github.com:twuni/common-persistence.git</developerConnection>
+		<connection>scm:git:git@github.com:twuni/common-persistence.git</connection>
+		<url>scm:git:https://twuni@github.com/twuni/common-persistence.git</url>
 	</scm>
 
 	<developers>
