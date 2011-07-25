@@ -1,4 +1,4 @@
-package org.twuni.common.orm;
+package org.twuni.common.persistence;
 
 public interface Transaction {
 

@@ -1,4 +1,4 @@
-package org.twuni.common.orm.exception;
+package org.twuni.common.persistence.exception;
 
 public class RollbackException extends RuntimeException {
 
