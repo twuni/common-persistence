@@ -1,6 +1,49 @@
 package org.twuni.common.persistence;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Migration implements Comparable<Migration> {
+
+	public static List<Transaction> migrate( int oldVersion, int newVersion, Migration... history ) {
+
+		List<Transaction> transactions = new ArrayList<Transaction>();
+
+		if( oldVersion == newVersion ) {
+			return transactions;
+		}
+
+		if( oldVersion < newVersion ) {
+
+			for( Migration migration : history ) {
+
+				int sequence = migration.getSequence();
+
+				if( oldVersion < sequence && sequence <= newVersion ) {
+					transactions.add( migration.forward() );
+				}
+
+			}
+
+		} else if( oldVersion > newVersion ) {
+
+			for( int i = 0; i < history.length; i++ ) {
+
+				Migration migration = history[history.length - 1 - i];
+
+				int sequence = migration.getSequence();
+
+				if( newVersion < sequence && sequence <= oldVersion ) {
+					transactions.add( migration.reverse() );
+				}
+
+			}
+
+		}
+
+		return transactions;
+
+	}
 
 	private final int sequence;
 	private final Transaction forward;
